@@ -6,26 +6,30 @@ const axios = require('axios')
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
-// app.use(router)
+app.use(router)
 // app.get('/', (req, res) => res.status(200).json('halooo'))
 
-app.get('/', async (req, res) => {
+// app.get('/', async (req, res) => {
 
-    try {
+//     try {
             
-        const { data } = await axios({
-            method: 'get',
-            url: 'https://quizapi.io/api/v1/questions?limit=5&category=code'
-        })
+//         const { data } = await axios({
+//             method: 'get',
+//             url: 'https://quizapi.io/api/v1/questions?limit=5&category=code',
+//             headers: {
+//                 "X-Api-Key": "uaTAxcxHwNnX1wH1wQwjHhA0kHC9HSxoT9WoaOow"
+//             }
+//         })
 
-        console.log(data)
+//         console.log(data)
+//         res.status(200).json(data)
 
-    } catch (error) {
+//     } catch (error) {
 
-        console.log(error)
+//         console.log(error)
         
-    }
+//     }
 
-})
+// })
 
 app.listen(port, () => console.log('listen on port ' +  port))
